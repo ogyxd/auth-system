@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;800&display=swap');
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+    list-style-type: none;
+    font-family: 'Poppins', sans-serif;
+    color: #252525;
+    box-sizing: border-box;
+}
+
+@import "_variables.scss";
+@import "_classes.scss";
+@import "_mixins.scss";
+
+.wrapper {
+    background-color: $dark;
+}
+
+.wrapper:has(nav) {
+    box-shadow: $nav-shadow;
+}
+
+.container {
+    width: 75%;
+    margin-inline: auto;
+    max-width: 1440px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    margin-bottom: 2rem;
+        h1 {
+        color: $light;
+        font-size: $title-font-size;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+        a {
+            color: $light;
+            padding: .5rem 1rem;
+            transition: background-color 400ms;
+            border-radius: $border-radius-sm;
+        }
+        a:hover {
+           background-color: $dark-brighter;
+        }
+    }
+}
+
+form {
+    .form-input {
+        @include form-control;
+    }
+    .form-submit {
+        @include form-control;
+        background-color: $primary;
+        color: $light;
+        cursor: pointer;
+    }
+    max-width: 500px;
+}
+
+.error {
+    color: $danger;
+    margin-left: 1rem;
+}
+
+@media (max-device-width: 576px) {
+    .container {
+        width: 95%;
+    }
+}

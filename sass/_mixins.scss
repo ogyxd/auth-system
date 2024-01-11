@@ -1,0 +1,12 @@
+@mixin debug {
+    outline: 1px solid red;
+}
+
+@mixin form-control {
+    padding: .25rem 1rem;
+    border-radius: $border-radius-md;
+    border: .2rem solid $primary;
+    font-size: $form-font-size;
+    width: 100%;
+    margin-top: 1rem;
+}
